@@ -180,10 +180,10 @@
         </div>
     </div>
     
-    <audio autoplay loop id="playAudio">
+    <audio id="background-music">
       <source src="nen.mp3" type="audio/mpeg">
       Trình duyệt của bạn không hỗ trợ âm thanh.
-  </audio>
+    </audio>
   
 
     <script>
@@ -252,7 +252,7 @@
                 retina_detect: true
             });
 
-            // Thêm sự kiện click để mở quà
+            // Thêm sự kiện click để mở quà và phát nhạc
             $('#present').on('click', function() {
                 $(this).find('.present').toggleClass('open'); // Quay hộp quà
                 
@@ -261,6 +261,10 @@
 
                 // Hiển thị tấm thư
                 $('#card').fadeIn();
+                
+                // Phát nhạc
+                const audio = document.getElementById('background-music');
+                audio.play();
             });
         });
 
